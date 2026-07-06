@@ -1,6 +1,6 @@
 # Rahul Sharma — Personal CV Site
 
-A single-page CV site inspired by the editorial layout of [Te Arai Links Golf](https://tearai.com/golf/): Playfair Display headings, Montserrat body copy, a full-bleed hero, white intro sections, and immersive experience panels.
+A single-page CV site 
 
 ## View locally
 
