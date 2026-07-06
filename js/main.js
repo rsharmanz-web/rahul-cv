@@ -1,23 +1,10 @@
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
-const hero = document.querySelector(".hero");
 const yearEl = document.getElementById("year");
 
 if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
-}
-
-function updateHeader() {
-  if (!header) {
-    return;
-  }
-
-  const heroBottom = hero ? hero.offsetHeight : 0;
-  const scrolledPastHero = window.scrollY > heroBottom - header.offsetHeight;
-
-  header.classList.toggle("is-solid", scrolledPastHero);
-  header.classList.toggle("is-light", !scrolledPastHero);
 }
 
 function closeMenu() {
@@ -61,7 +48,3 @@ window.addEventListener("keydown", (event) => {
     closeMenu();
   }
 });
-
-window.addEventListener("scroll", updateHeader, { passive: true });
-window.addEventListener("resize", updateHeader, { passive: true });
-updateHeader();
