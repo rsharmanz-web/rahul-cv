@@ -1,7 +1,9 @@
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
+const themeToggle = document.querySelector(".theme-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
 const yearEl = document.getElementById("year");
+const root = document.documentElement;
 
 if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
@@ -29,6 +31,25 @@ function openMenu() {
   document.body.classList.add("is-menu-open");
 }
 
+function updateThemeToggle(theme) {
+  if (!themeToggle) {
+    return;
+  }
+
+  const isDark = theme === "dark";
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Switch to light mode" : "Switch to dark mode"
+  );
+}
+
+function setTheme(theme) {
+  const nextTheme = theme === "light" ? "light" : "dark";
+  root.setAttribute("data-theme", nextTheme);
+  localStorage.setItem("theme", nextTheme);
+  updateThemeToggle(nextTheme);
+}
+
 if (menuToggle) {
   menuToggle.addEventListener("click", () => {
     if (header.classList.contains("is-open")) {
@@ -36,6 +57,13 @@ if (menuToggle) {
     } else {
       openMenu();
     }
+  });
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = root.getAttribute("data-theme") === "light" ? "light" : "dark";
+    setTheme(currentTheme === "dark" ? "light" : "dark");
   });
 }
 
@@ -48,3 +76,5 @@ window.addEventListener("keydown", (event) => {
     closeMenu();
   }
 });
+
+updateThemeToggle(root.getAttribute("data-theme") === "light" ? "light" : "dark");

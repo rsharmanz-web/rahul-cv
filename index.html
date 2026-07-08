@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rahul Sharma — strategist and product leader with 17 years of experience across Xero, ANZ, Sky TV and Les Mills.">
   <title>Rahul Sharma</title>
+  <script>
+    (function () {
+      var theme = localStorage.getItem("theme");
+      document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
@@ -23,22 +29,28 @@
       <span></span>
     </button>
     <a href="#top" class="site-logo" aria-label="Rahul Sharma home">RS</a>
-    <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a href="#profile">Profile</a>
-      <a href="#approach">Approach</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path class="theme-toggle__bulb" d="M12 2a6 6 0 0 0-3 11.2V17a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-3.8A6 6 0 0 0 12 2Z" />
+          <path class="theme-toggle__base" d="M10 20h4v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1Z" />
+        </svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="#profile">Profile</a>
+        <a href="#approach">Approach</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
     <section class="hero" aria-label="Introduction">
       <div class="hero-inner">
-        <p class="hero-eyebrow">17 years in the game</p>
-        <h1 class="hero-title">Rahul Sharma <span class="pipe">|</span> Strategist</h1>
-        <p class="hero-tagline">Technology. Customers. Commercial returns.</p>
+        <h1 class="hero-title">Rahul Sharma</h1>
         <p class="hero-deck">
-          Finding the sweet spot between what technology makes possible, solving problems for customers and real world commercial returns.
+          I've made a career out of balancing the tension between feasible, desirable, and viable — to design, then deliver products that matter.
         </p>
       </div>
     </section>
@@ -48,17 +60,14 @@
       <h2 class="section-title">Certified product leader</h2>
       <div class="editorial-copy">
         <p>
-          Hello! I'm Rahul, a strategist and product leader with 17 years of experience helping companies like Xero, ANZ, Sky TV and Les Mills find the sweet spot between what technology makes possible, solving problems for customers and real world commercial returns.
-        </p>
-        <p>
-          Most recently I've specialised in taking Xero's AI product strategy from 0 to 1.
+          Hello! I'm Rahul, a researcher, strategist and product leader with 17 years of experience helping companies like Xero, ANZ, Sky TV and Les Mills. I've held principal level roles, most recently helping take Xero's AI feature set from 0 to 1 by managing the associated design research programme.
         </p>
       </div>
     </section>
 
     <section class="editorial editorial--dark" id="approach">
       <p class="section-eyebrow">Approach</p>
-      <h2 class="section-title">Player coach by nature</h2>
+      <h2 class="section-title">Player <span class="pipe">|</span> Coach</h2>
       <div class="editorial-copy">
         <p>
           A player coach by nature, I've held Principal roles leading complex, cross-functional projects from discovery to delivery. In these settings I lean on combinations of research and service design and human centred design to provide rigour and a firm focus on customer value.
@@ -71,54 +80,65 @@
 
     <div class="experience-anchor" id="experience" aria-hidden="true"></div>
 
-    <section class="drop" aria-labelledby="xero-title">
-      <div class="drop-grid drop-grid--single">
-        <figure class="drop-figure drop-figure--logo">
+    <section class="case-study" aria-labelledby="xero-title">
+      <div class="case-study-inner">
+        <p class="section-eyebrow">Experience</p>
+        <h2 class="case-study-title" id="xero-title">Xero</h2>
+        <figure class="case-study-card">
           <img
             src="images/xero.png"
-            alt="Xero"
+            alt="Xero case study"
+            class="case-study-card__media"
             loading="lazy"
           >
         </figure>
-      </div>
-      <div class="drop-copy">
-        <p class="section-eyebrow">Experience</p>
-        <h2 class="drop-title" id="xero-title">Xero</h2>
-        <p>
-          For 2.5 years I've lived at the Xero's AI journey. In that time I've set the foundations of Xero's AI Product Design Principles, defined how AI will evolve workflows across cashflow forecasting, tax and practice management and de-risked the commercialisation strategy. I also established the feature evaluation programme to take features from concept to GA (general availability).
-        </p>
-        <ul class="stat-row">
-          <li><strong>0 → 1</strong> AI product strategy</li>
-          <li><strong>GA</strong> feature evaluation programme</li>
-        </ul>
+        <div class="case-study-copy">
+          <p>
+            For 2.5 years I've lived at the Xero's AI journey. In that time I've set the foundations of Xero's AI Product Design Principles, defined how AI will evolve workflows across cashflow forecasting, tax and practice management and de-risked the commercialisation strategy. I also established the feature evaluation programme to take features from concept to GA (general availability).
+          </p>
+          <ul class="stat-row">
+            <li><strong>0 → 1</strong> AI product strategy</li>
+            <li><strong>GA</strong> feature evaluation programme</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="drop drop--reverse" aria-labelledby="lesmills-title">
-      <div class="drop-copy">
-        <h2 class="drop-title" id="lesmills-title">Les Mills Fitness Plus</h2>
-        <p>
-          Set the strategy to transform Fitness+ from a basic video library into a true fitness app: a multi-surface experience across TV, mobile, and web. Defined the service and customer blueprint that reframed what the product needed to be, not just what it looked like.
-        </p>
-        <ul class="stat-row">
-          <li><strong>69%</strong> trial-to-paid</li>
-          <li><strong>95%</strong> customer delight</li>
-          <li><strong>Bronze</strong> Best Design Awards 2020</li>
-        </ul>
+    <section class="case-study" aria-labelledby="lesmills-title">
+      <div class="case-study-inner">
+        <h2 class="case-study-title" id="lesmills-title">Les Mills Fitness Plus</h2>
+        <figure class="case-study-card case-study-card--placeholder case-study-card--lesmills" aria-label="Les Mills case study placeholder">
+          <span class="case-study-card__label">Case study image</span>
+        </figure>
+        <div class="case-study-copy">
+          <p>
+            Set the strategy to transform Fitness+ from a basic video library into a true fitness app: a multi-surface experience across TV, mobile, and web. Defined the service and customer blueprint that reframed what the product needed to be, not just what it looked like.
+          </p>
+          <ul class="stat-row">
+            <li><strong>69%</strong> trial-to-paid</li>
+            <li><strong>95%</strong> customer delight</li>
+            <li><strong>Bronze</strong> Best Design Awards 2020</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="drop" aria-labelledby="skytv-title">
-      <div class="drop-copy">
-        <h2 class="drop-title" id="skytv-title">Sky TV</h2>
-        <p>
-          Defined Sky's entry into the New Zealand broadband market with a proposition that gave a TV company a credible reason to sell internet: broadband built for entertainment. Architected the service model end to end — acquisition (pricing and packaging), sales (a reimagined skytv.co.nz), and support (installation and customer care) — laying the groundwork to transform Sky NZ from a satellite entertainment service into a broadband provider.
-        </p>
-        <ul class="stat-row">
-          <li><strong>200%</strong> cart conversion lift</li>
-          <li><strong>+44</strong> NPS</li>
-          <li><strong>85%</strong> CSAT</li>
-        </ul>
+    <section class="case-study" aria-labelledby="skytv-title">
+      <div class="case-study-inner">
+        <h2 class="case-study-title" id="skytv-title">Sky TV</h2>
+        <figure class="case-study-card case-study-card--placeholder case-study-card--skytv" aria-label="Sky TV case study placeholder">
+          <span class="case-study-card__label">Case study image</span>
+        </figure>
+        <div class="case-study-copy">
+          <p>
+            Defined Sky's entry into the New Zealand broadband market with a proposition that gave a TV company a credible reason to sell internet: broadband built for entertainment. Architected the service model end to end — acquisition (pricing and packaging), sales (a reimagined skytv.co.nz), and support (installation and customer care) — laying the groundwork to transform Sky NZ from a satellite entertainment service into a broadband provider.
+          </p>
+          <ul class="stat-row">
+            <li><strong>200%</strong> cart conversion lift</li>
+            <li><strong>+44</strong> NPS</li>
+            <li><strong>85%</strong> CSAT</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -129,7 +149,6 @@
         <p>
           Outside of my work, I'm a Junior Grade convenor at Cornwall Cricket Club, enjoy staying active and travel (but really who doesn't).
         </p>
-        <p class="personal-closer">Say hello.</p>
       </div>
     </section>
 
@@ -138,8 +157,7 @@
         <p class="section-eyebrow">Contact</p>
         <h2 class="contact-title">Let's talk</h2>
         <div class="contact-links">
-          <a href="mailto:hello@rahulsharma.co" class="solid-button">hello@rahulsharma.co</a>
-          <a href="mailto:r.sharma.nz@gmail.com" class="solid-button solid-button--outline">r.sharma.nz@gmail.com</a>
+          <a href="mailto:r.sharma.nz@gmail.com" class="solid-button">r.sharma.nz@gmail.com</a>
           <a href="https://www.linkedin.com/in/rahulsharma" class="solid-button solid-button--outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
