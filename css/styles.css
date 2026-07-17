@@ -415,6 +415,17 @@ ul {
   font-weight: 400;
 }
 
+.editorial-copy a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.15em;
+}
+
+.editorial-copy a:hover {
+  opacity: 0.8;
+}
+
 .expertise-list {
   margin: 0 0 1rem;
   padding-left: 1.25rem;
@@ -494,8 +505,13 @@ ul {
 .case-study-card__media--contain {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   margin: 0;
+}
+
+.case-study-card__media--sky {
+  transform: scale(1.15);
+  transform-origin: 50% 38%;
 }
 
 .case-study-card--placeholder {
